@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aryan Chawla — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf9f4;--card:#fff;--ink:#1b1b2f;--mute:#5d5d73;--line:#e4e0d6;--a:#6c4cf5;--b:#ff9f1c;--c:#12b5a6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12121c;--card:#1b1b2b;--ink:#f2f0ff;--mute:#a4a3bd;--line:#2c2c42;--a:#9a84ff;--b:#ffb84d;--c:#3ee0cf;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12121c;--card:#1b1b2b;--ink:#f2f0ff;--mute:#a4a3bd;--line:#2c2c42;--a:#9a84ff;--b:#ffb84d;--c:#3ee0cf;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 'Space Grotesk',system-ui,sans-serif;overflow-x:hidden}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap;padding:12px 16px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);font-size:14px}
+nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--a)}
+nav button{background:none;border:1px solid var(--line);border-radius:99px;color:var(--ink);padding:2px 10px;cursor:pointer}
+main{max-width:980px;margin:0 auto;padding:0 20px}
+.hero{padding:72px 0 48px}
+.chip{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:4px 14px;font-size:13px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--c);animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.25;transform:scale(1.5)}}
+h1{font-size:clamp(40px,8vw,76px);line-height:1.02;margin:18px 0 12px;letter-spacing:-2px}
+h1 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.term{margin:20px 0;background:#15151f;color:#d9d6ff;border-radius:14px;padding:16px 18px;font-size:14px;max-width:560px;box-shadow:6px 6px 0 var(--a)}
+.term b{color:#ffb84d;font-weight:600}.term i{color:#3ee0cf;font-style:normal}
+.cur{display:inline-block;width:8px;height:15px;background:#d9d6ff;vertical-align:-2px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{padding:10px 20px;border-radius:12px;border:2px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600;transition:transform .15s,box-shadow .15s;background:var(--card)}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:4px 4px 0 var(--b)}
+.btn.p{background:var(--a);color:#fff;border-color:var(--a)}
+section{padding:44px 0}
+h2{font-size:32px;margin:0 0 6px;letter-spacing:-1px}
+h2::before{content:"// ";color:var(--b);font-family:'JetBrains Mono',monospace}
+.sub{color:var(--mute);margin:0 0 24px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.stat b{display:block;font-size:34px;color:var(--a);line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;transition:transform .2s}
+.card:hover{transform:rotate(-.8deg) translateY(-4px)}
+.card h3{margin:0 0 4px;font-size:21px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font:600 12px 'JetBrains Mono',monospace;padding:3px 9px;border-radius:8px;background:color-mix(in srgb,var(--a) 14%,transparent);color:var(--a)}
+.card ul,.job ul{padding-left:18px;margin:8px 0 0;color:var(--mute);font-size:15px}
+.job{border-left:3px solid var(--a);padding:2px 0 2px 20px;margin-bottom:28px;position:relative}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--b);border:3px solid var(--bg)}
+.job h3{margin:0}.job small{color:var(--mute)}
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.sk{border:2px solid var(--line);background:var(--card);border-radius:12px;padding:6px 14px;font-weight:600;cursor:pointer;transition:.15s}
+dialog{border:2px solid var(--ink);border-radius:18px;background:var(--card);color:var(--ink);font:inherit;padding:0;width:min(660px,calc(100% - 28px));max-height:86vh;overflow:auto;box-shadow:6px 6px 0 var(--a)}
+dialog::backdrop{background:rgba(10,10,20,.6)}
+#dbody{padding:22px}
+.pj{border-top:1px dashed var(--line);margin-top:16px;padding-top:14px}
+.pj h4{margin:0;font-size:19px}.pj p{margin:6px 0;color:var(--mute);font-size:15px}
+.sk:hover{border-color:var(--c);transform:rotate(-3deg) scale(1.1)}
+.sk.hot{background:var(--a);color:#fff;border-color:var(--a)}
+.cat{font:600 13px 'JetBrains Mono',monospace;color:var(--mute);margin:18px 0 8px}
+.fun{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.fun div{background:var(--card);border:1px dashed var(--mute);border-radius:16px;padding:16px}
+.fun span{font-size:30px}
+.road{position:relative;height:46px;border-bottom:3px dashed var(--line);margin-top:10px}
+#rover{position:absolute;bottom:-4px;left:0;width:76px;height:42px;cursor:pointer;transition:left 2.2s cubic-bezier(.5,0,.3,1);user-select:none}
+.wh{transform-box:fill-box;transform-origin:center}
+#rover.drive .wh{animation:sp .35s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+footer{padding:40px 0 60px;text-align:center;color:var(--mute);font-size:14px}
+.contact{font-size:22px}.contact a{color:var(--a)}
+</style>
+</head>
+<body>
+<nav class="mono">
+<a href="#about">about</a><a href="#work">work</a><a href="#projects">projects</a><a href="#skills">skills</a><a href="#fun">off-duty</a><a href="#contact">contact</a>
+<button id="theme" aria-label="Toggle theme">◐ theme</button>
+</nav>
+<main>
+<header class="hero" id="about">
+<span class="chip mono"><i class="dot"></i> open to Software Developer roles · class of 2027</span>
+<h1>Hi, I’m <span>Aryan Chawla.</span></h1>
+<p style="font-size:21px;max-width:620px">I build software that talks to clouds, and a rover that’s learning to talk to walls. ECE student, full-stack tinkerer, Kubernetes enjoyer.</p>
+<div class="term mono">
+<div><b>$</b> whoami</div>
+<div><i>aryan</i> — B.Tech ECE @ BVCOE, New Delhi</div>
+<div><b>$</b> cat status.txt</div>
+<div><i>CGPA 8.34</i> · 2 internships · 1 rover in progress</div>
+<div><b>$</b> <span id="type"></span><span class="cur"></span></div>
+</div>
+<div class="btns">
+<a class="btn p" href="#projects">See what I’ve built</a>
+<a class="btn" href="https://github.com/aryawwn21" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/aryan-chawla-9300b6355" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</header>
+
+<section>
+<div class="stats">
+<div class="stat"><b data-n="2">0</b>internships (Transtrack &amp; Ericsson)</div>
+<div class="stat"><b>7/7</b>automated tests passing</div>
+<div class="stat"><b>100.44</b>Gbit/s simulated throughput</div>
+<div class="stat"><b data-n="4">0</b>years as cricket captain</div>
+</div>
+</section>
+
+<section id="work">
+<h2>Where I’ve worked</h2><p class="sub">Two summers of clusters, containers and charts.</p>
+<div class="job">
+<h3>Software Engineering Intern — Transtrack India</h3>
+<small class="mono">Jun – Aug 2026 · From 5G to 6G: Cloud-Native Network Evolution &amp; KPI Monitoring</small>
+<ul>
+<li>Studied the 5G→6G journey and the ITU-R IMT-2030 framework (M.2160) with its six usage scenarios.</li>
+<li>Built a simulated KPI monitor with Flask, SQLite3 and Matplotlib tracking latency, throughput and spectral efficiency against IMT-2030 targets, with live trend graphs.</li>
+<li>Dockerized it and deployed on Kubernetes, with a CronJob collecting data every five minutes.</li>
+<li>7 of 7 automated tests passing; simulated averages of 0.541 ms latency and 100.44 Gbit/s throughput.</li>
+</ul>
+</div>
+<div class="job">
+<h3>Software Engineering Intern — Ericsson India</h3>
+<small class="mono">Jun – Aug 2025 · Kubernetes Cluster Monitoring on AWS EKS</small>
+<ul>
+<li>Provisioned an AWS EKS cluster (Kubernetes 1.30) with eksctl and a Spot-backed managed node group.</li>
+<li>Set up Metrics Server and Cluster Autoscaler for resource visibility and dynamic scaling.</li>
+<li>Wrote a Flask + Kubernetes API + SQLite + Matplotlib app that collects, stores and visualizes cluster metrics; containerized and scheduled via CronJob.</li>
+<li>Documented security best practices and an upgrade path to Prometheus and Grafana.</li>
+</ul>
+</div>
+</section>
+
+<section id="projects">
+<h2>Things I’ve built</h2><p class="sub">Hover the cards. They’re a little jumpy.</p>
+<div class="grid">
+<div class="card"><h3>🤖 Indoor Delivery Rover</h3><small class="mono">ongoing</small>
+<div class="tags"><span class="tag">ROS 2</span><span class="tag">Nav2</span><span class="tag">SLAM</span><span class="tag">Sensor Fusion</span></div>
+<ul><li>Differential-drive rover for GPS-denied indoor navigation.</li><li>Autonomous obstacle avoidance; designed for payloads up to 10 kg.</li></ul></div>
+<div class="card"><h3>⏰ DeadlineZero</h3>
+<div class="tags"><span class="tag">React 18</span><span class="tag">Vite</span><span class="tag">Gemini 2.0 Flash</span><span class="tag">Cloud Run</span></div>
+<ul><li>AI productivity app with Google Calendar integration via OAuth 2.0.</li><li>Dockerized and deployed on Google Cloud Run.</li></ul></div>
+<div class="card"><h3>🧘 MindTracker</h3><small class="mono">team of 4</small>
+<div class="tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">JWT</span><span class="tag">Claude API</span></div>
+<ul><li>Full-stack wellness app with JWT auth and AI-powered features.</li><li>Also wrote the report, presentation and poster. Deployed on Netlify.</li></ul></div>
+<div class="card"><h3>💊 MedNav Pro</h3>
+<div class="tags"><span class="tag">React 18</span><span class="tag">Vite</span><span class="tag">Leaflet</span><span class="tag">Nominatim</span></div>
+<ul><li>Map-based medicine and pharmacy navigator with geocoded search.</li><li>8 pages, 10 reusable components.</li></ul></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Toolbox</h2><p class="sub">Click any skill to see the projects where I used it.</p>
+<div class="cat">languages</div>
+<div class="skills"><span class="sk">Python</span><span class="sk">C</span><span class="sk">C++</span><span class="sk">JavaScript</span><span class="sk">SQL</span><span class="sk">MATLAB</span></div>
+<div class="cat">web &amp; backend</div>
+<div class="skills"><span class="sk">React</span><span class="sk">Node.js</span><span class="sk">Express</span><span class="sk">Flask</span><span class="sk">REST APIs</span><span class="sk">JWT</span><span class="sk">MySQL</span><span class="sk">SQLite</span></div>
+<div class="cat">cloud &amp; devops</div>
+<div class="skills"><span class="sk">Kubernetes</span><span class="sk">Docker</span><span class="sk">AWS EKS</span><span class="sk">Cloud Run</span><span class="sk">Linux</span></div>
+<div class="cat">electronics &amp; core</div>
+<div class="skills"><span class="sk">Embedded C</span><span class="sk">Keil</span><span class="sk">LTspice</span><span class="sk">8085</span><span class="sk">DSA</span><span class="sk">Digital &amp; Analog Comm</span></div>
+</section>
+
+<section id="fun">
+<h2>Off-duty</h2><p class="sub">Not all of me is YAML.</p>
+<div class="fun">
+<div><span>🏆</span><br><b>Hack Summit</b><br>Third place at Amity University Mohali.</div>
+<div><span>🎮</span><br><b>Head, Gaming Society</b><br>Ran workshops and events; led teams to multiple inter-college finals and wins.</div>
+<div><span>🏏</span><br><b>Cricket captain</b><br>Four years leading the school team, up to district level.</div>
+<div><span>🥁</span><br><b>Tabla &amp; vocals</b><br>Five-year tabla and four-year vocal diplomas, both with Distinction.</div>
+</div>
+<p class="sub" style="margin-top:22px">Psst: click the beach buggy. <span class="mono">(sand not included)</span></p>
+<div class="road"><svg id="rover" viewBox="0 0 80 44" role="img" aria-label="Beach buggy"><title>Drive me</title><path d="M24 22 L28 8 H52 L58 22" fill="none" stroke="#1b1b2f" stroke-width="3" stroke-linejoin="round"/><rect x="30" y="13" width="10" height="10" rx="3" fill="#6c4cf5"/><rect x="6" y="22" width="68" height="9" rx="4" fill="#ff9f1c"/><rect x="62" y="18" width="10" height="5" rx="2" fill="#12b5a6"/><g class="wh"><circle cx="18" cy="33" r="10" fill="#1b1b2f"/><circle cx="18" cy="33" r="4" fill="#ddd"/><path d="M18 25V41M10 33H26" stroke="#ddd" stroke-width="2"/></g><g class="wh"><circle cx="62" cy="33" r="10" fill="#1b1b2f"/><circle cx="62" cy="33" r="4" fill="#ddd"/><path d="M62 25V41M54 33H70" stroke="#ddd" stroke-width="2"/></g></svg></div>
+</section>
+
+<section id="contact" style="text-align:center">
+<h2 style="display:inline-block">Let’s build something</h2>
+<p class="contact"><a href="mailto:aryan2005.chawla@gmail.com">aryan2005.chawla@gmail.com</a></p>
+<p class="sub">New Delhi, India · B.Tech ECE, BVCOE (GGSIPU), 2023–2027 · B.Tech CGPA: 8.34 · Class XII: 90%</p>
+</section>
+</main>
+<dialog id="dlg"><div id="dbody"></div></dialog>
+<footer class="mono">Built with caffeine and a tiny bit of JavaScript. ☕</footer>
+<script>
+(function(){
+var t=document.getElementById('type'),lines=['ros2 launch rover nav.launch.py','kubectl get pods --all-namespaces','git commit -m "ship it"'],li=0,ci=0,del=false;
+function tick(){var s=lines[li];ci+=del?-1:1;t.textContent=s.slice(0,ci);
+var d=del?25:60;if(!del&&ci===s.length){del=true;d=1400}else if(del&&ci===0){del=false;li=(li+1)%lines.length;d=300}setTimeout(tick,d)}
+tick();
+document.querySelectorAll('[data-n]').forEach(function(e){var n=+e.dataset.n,i=0;var iv=setInterval(function(){e.textContent=++i;if(i>=n)clearInterval(iv)},350)});
+var P={
+eri:{t:'5G to 6G KPI Monitoring — Transtrack India',m:'Software Engineering Intern · Jun–Aug 2026',g:['Flask','SQLite3','Matplotlib','Docker','Kubernetes'],d:'A study and prototype on the evolution from 5G toward 6G, focused on network performance indicators and cloud-native monitoring. The prototype recorded simulated network measurements and presented them visually.',b:['Studied the ITU-R IMT-2030 framework (Recommendation M.2160) and its six usage scenarios.','Built a simulated KPI monitor tracking latency, throughput and spectral efficiency against IMT-2030 targets.','Added live trend graphs to make changes in the indicators easy to observe over time.','Containerized with Docker and deployed on Kubernetes; a CronJob collects data every five minutes.','7 of 7 automated tests passing; simulated averages of 0.541 ms latency and 100.44 Gbit/s throughput.']},
+tra:{t:'Kubernetes Cluster Monitoring on AWS EKS — Ericsson India',m:'Software Engineering Intern · Jun–Aug 2025',g:['AWS EKS','Kubernetes 1.30','eksctl','Flask','SQLite','Matplotlib'],d:'A cloud infrastructure monitoring project: provision a Kubernetes environment, make cluster resource information observable, collect historical metrics and present them through a lightweight app.',b:['Provisioned an EKS cluster (Kubernetes 1.30) with eksctl, using a Spot-backed managed node group for cost.','Used Metrics Server for resource visibility and Cluster Autoscaler for dynamic scaling.','Built a Flask app using the Kubernetes API, SQLite and Matplotlib to collect, store and visualize metrics.','Containerized with Docker and deployed on Kubernetes with a CronJob for scheduled collection.','Documented security best practices and an upgrade path toward Prometheus and Grafana.']},
+dea:{t:'DeadlineZero — AI Productivity Application',m:'Personal project',g:['React 18','Vite','Gemini 2.0 Flash','Docker','Google Cloud Run','Google Calendar API','OAuth 2.0'],d:'An AI-assisted productivity web app that brings AI capabilities and calendar integration into one place.',b:['Built the frontend with React 18 and Vite.','Integrated Gemini 2.0 Flash for the AI-assisted functionality.','Implemented Google Calendar integration through an OAuth 2.0 authorization flow.','Containerized with Docker and deployed on Google Cloud Run.']},
+min:{t:'MindTracker — Wellness Web Application',m:'Team project · 4 members',g:['React','Node.js','Express','MySQL','JWT','Claude API'],d:'A full-stack wellness app combining a browser interface, backend services, persistent storage, authentication and AI-powered features.',b:['React frontend with a Node.js and Express backend.','MySQL for structured data storage.','JWT-based authentication for access control.','Claude API integration for AI-powered features.','Prepared the project report, presentation and poster; deployed on Netlify.']},
+med:{t:'MedNav Pro — Medicine and Pharmacy Navigator',m:'Personal project',g:['React 18','Vite','Leaflet','Nominatim'],d:'A location-based web app to help users navigate information about medicines and pharmacies, using mapping and geocoding.',b:['Built with React 18 and Vite.','Leaflet provides the map-based experience.','Nominatim geocoding converts location searches into geographic references.','Structured into 8 pages and 10 reusable components.']},
+rov:{t:'Autonomous Indoor Delivery Rover',m:'Ongoing hardware and robotics project',g:['ROS 2','Nav2','SLAM','Sensor Fusion','Embedded Systems'],d:'A differential-drive rover for indoor navigation in GPS-denied environments, built around autonomous navigation, sensor fusion and obstacle avoidance.',b:['ROS 2 as the software framework, with Nav2 for navigation.','SLAM concepts for mapping and navigation without GPS.','Sensor fusion as part of perception and navigation.','Autonomous obstacle avoidance for safer indoor movement.','Design target: payloads up to 10 kg.']}
+};
+var S={'Python':['eri','tra'],'Flask':['eri','tra'],'JavaScript':['dea','min','med'],'React':['dea','min','med'],'Node.js':['min'],'Express':['min'],'REST APIs':['dea','min','med','tra'],'JWT':['min'],'MySQL':['min'],'SQLite':['eri','tra'],'Kubernetes':['eri','tra'],'Docker':['eri','tra','dea'],'AWS EKS':['tra'],'Cloud Run':['dea'],'Embedded C':['rov']};
+var dlg=document.getElementById('dlg'),box=document.getElementById('dbody');
+dlg.addEventListener('click',function(ev){if(ev.target===dlg)dlg.close()});
+function show(k){var ids=S[k]||[],h='<h3 style="margin:0 0 4px;font-size:26px">'+k.replace(/&/g,'&amp;')+'</h3>';
+if(!ids.length){h+='<p style="color:var(--mute)">No standalone project on my resume uses this one yet. It’s part of the foundation toolkit behind my coursework in software, databases, analysis and electronics.</p>'}
+else{h+='<p style="color:var(--mute);margin-top:0">Used in '+ids.length+' project'+(ids.length>1?'s':'')+':</p>';ids.forEach(function(i){var p=P[i];h+='<div class="pj"><h4>'+p.t+'</h4><small class="mono">'+p.m+'</small><div class="tags">'+p.g.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')+'</div><p>'+p.d+'</p><ul style="color:var(--mute);font-size:15px;padding-left:18px;margin:6px 0 0">'+p.b.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'})}
+h+='<div style="margin-top:20px;text-align:right"><button class="btn" id="dx" style="cursor:pointer;font:inherit">Close</button></div>';
+box.innerHTML=h;document.getElementById('dx').onclick=function(){dlg.close()};dlg.showModal()}
+document.querySelectorAll('.sk').forEach(function(e){e.tabIndex=0;e.setAttribute('role','button');
+function go(){document.querySelectorAll('.sk.hot').forEach(function(x){x.classList.remove('hot')});e.classList.add('hot');show(e.textContent.trim())}
+e.addEventListener('click',go);e.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();go()}})});
+var r=document.getElementById('rover'),go=false;
+r.addEventListener('click',function(){if(r.classList.contains('drive'))return;var w=r.parentNode.clientWidth-80;go=!go;r.classList.add('drive');r.style.left=go?w+'px':'0px';r.style.transform=go?'none':'scaleX(-1)'});
+r.addEventListener('transitionend',function(e){if(e.propertyName==='left')r.classList.remove('drive')});
+var dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+document.getElementById('theme').addEventListener('click',function(){dark=!dark;document.documentElement.setAttribute('data-theme',dark?'dark':'light')});
+})();
+</script>
+</body>
+</html>
